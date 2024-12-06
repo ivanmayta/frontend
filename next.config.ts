@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
                 port: "1337",
                 pathname: "/uploads/**/*",
             },
+            {
+                protocol: "https",
+                hostname: "starfish-app-aw8cq.ondigitalocean.app",
+                pathname: "/uploads/**/*",
+            }
         ],
     },
 }
