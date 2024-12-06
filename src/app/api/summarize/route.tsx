@@ -5,6 +5,8 @@ import { ChatOpenAI } from "@langchain/openai"
 import { PromptTemplate } from "@langchain/core/prompts"
 import { StringOutputParser } from "@langchain/core/output_parsers"
 import { generateGeminiSummary } from "@/services/ai/geminiService"
+export const maxDuration = 150;
+export const dynamic = "force-dynamic";
 const TEMPLATE = `
 INSTRUCTIONS: 
   For the this {text} complete the following steps.
