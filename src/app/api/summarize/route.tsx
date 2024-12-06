@@ -20,7 +20,7 @@ INSTRUCTIONS:
   Return possible and best recommended key words
 `
 
-export const generateSummary = async (content: string, template: string) => {
+const generateSummary = async (content: string, template: string) => {
     const prompt = PromptTemplate.fromTemplate(template)
     const model = new ChatOpenAI({
         openAIApiKey: process.env.OPENAI_API_KEY,
