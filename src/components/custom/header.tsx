@@ -3,6 +3,7 @@ import { Button } from "../ui/button"
 import { Logo } from "./logo"
 import { getUserMeLoader } from "@/services/auth/gete-user-me-loader"
 import { LogoutButton } from "./forms/logout-button"
+import { SummaryForm } from "./forms/summary-form"
 
 interface HeaderProps {
     id: number
@@ -26,6 +27,7 @@ async function Header({ data }: { readonly data: HeaderProps }) {
     return (
         <header className="flex items-center justify-between px-4 py-3 bg-white shadow-sm dark:bg-gray-800">
             <Logo text={logoText.text} />
+            {user.ok && <SummaryForm />}
             <div className=" flex items-center gap-4">
                 {user.ok ? (
                     <LoggedUser user={user.data} />

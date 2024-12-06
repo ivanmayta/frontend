@@ -1,5 +1,6 @@
 import qs from "qs"
 import { getStrapiURL } from "@/lib/utils"
+import { getAuthToken } from "./auth/get-token"
 
 const BASE_URL = getStrapiURL()
 const homePageQuery = qs.stringify({
@@ -58,16 +59,16 @@ export async function getStrapiData(path: string) {
 }
 
 async function fetchData(ulr: string) {
-    const TOKEN = null
+    const authToken = await getAuthToken()
     const headers = {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + TOKEN,
+            Authorization: "Bearer " + authToken,
         },
     }
 
-    const res = await fetch(ulr, TOKEN ? headers : {})
+    const res = await fetch(ulr, authToken ? headers : {})
 
     try {
         const data = await res.json()
@@ -97,4 +98,12 @@ export async function getGlobalMetaData() {
     })
     url.search = metadataQuery
     return await fetchData(url.href)
+}
+
+export async function getSummaries() {
+    const url = new URL("/api/summaries", BASE_URL)
+    return await fetchData(url.href)
+}
+export async function getSummaryById(summaryId: string) {
+    return fetchData(`${BASE_URL}/api/summaries/${summaryId}`)
 }
