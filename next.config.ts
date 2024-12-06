@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
             {
                 protocol: "https",
                 hostname: "starfish-app-aw8cq.ondigitalocean.app",
-                pathname: "/uploads/**/*",
             }
         ],
     },
