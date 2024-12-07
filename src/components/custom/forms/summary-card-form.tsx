@@ -38,18 +38,18 @@ export function SummaryCardForm({
     readonly item: any
     readonly className?: string
 }) {
-    const deleteSummaryById = deleteSummaryAction.bind(null, item.documentId)
+    //const deleteSummaryById = deleteSummaryAction.bind(null, item.documentId)
 
-    const [deleteState, deleteAction] = useActionState(
-        deleteSummaryById,
-        INITIAL_STATE
-    )
+    // const [deleteState, deleteAction] = useActionState(
+    //     deleteSummaryById,
+    //     INITIAL_STATE
+    // )
 
-    const [updateState, updateAction] = useActionState(
-        updateSummaryAction,
-        INITIAL_STATE
-    )
-    console.log(updateState)
+    // const [updateState, updateAction] = useActionState(
+    //     updateSummaryAction,
+    //     INITIAL_STATE
+    // )
+    //console.log(updateState)
     return (
         <Card className={cn("mb-8 relative h-auto", className)}>
             <CardHeader>
@@ -57,7 +57,7 @@ export function SummaryCardForm({
             </CardHeader>
             <CardContent>
                 <div>
-                    <form action={updateAction}>
+                    <form>
                         <Input
                             id="title"
                             name="title"
@@ -144,17 +144,15 @@ export function SummaryCardForm({
                             loadingText="Updating Summary"
                         />
                     </form>
-                    <form action={deleteAction}>
+                    <form>
                         <DeleteButton className="absolute right-4 top-4 bg-red-700 hover:bg-red-600" />
                     </form>
                 </div>
             </CardContent>
             <CardFooter>
-                <StrapiErrors
-                    error={
-                        deleteState?.strapiErrors || updateState?.strapiErrors
-                    }
-                />
+                {
+                    // <StrapiErrors error={deleteState.strapiErrors} />
+                }
             </CardFooter>
         </Card>
     )
