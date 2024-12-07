@@ -121,5 +121,6 @@ export async function getSummaries(queryString: string, currentPage: number) {
     return fetchData(url.href)
 }
 export async function getSummaryById(summaryId: string) {
-    return fetchData(`${BASE_URL}/api/summaries/${summaryId}`)
+    const url = new URL(`/api/summaries/${summaryId}`, BASE_URL)
+    return fetchData(url.href)
 }
