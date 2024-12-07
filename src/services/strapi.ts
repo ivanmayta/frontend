@@ -58,7 +58,7 @@ export async function getStrapiData(path: string) {
     }
 }
 
-async function fetchData(ulr: string) {
+export async function fetchData(ulr: string) {
     const authToken = await getAuthToken()
     const headers = {
         method: "GET",
