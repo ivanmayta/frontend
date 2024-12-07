@@ -1,6 +1,4 @@
-import type { NextConfig } from "next"
-
-const nextConfig: NextConfig = {
+const nextConfig = {
     /* config options here */
     images: {
         remotePatterns: [
@@ -13,7 +11,7 @@ const nextConfig: NextConfig = {
             {
                 protocol: "https",
                 hostname: "starfish-app-aw8cq.ondigitalocean.app",
-            }
+            },
         ],
     },
 }
