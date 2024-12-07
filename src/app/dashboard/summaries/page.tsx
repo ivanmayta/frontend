@@ -39,19 +39,21 @@ function LinkCard({ documentId, title, summary }: Readonly<LinkCardProps>) {
     )
 }
 
+type SearchParams = Promise<{
+    page?: string
+    query?: string
+}>
+
 interface SearchParamsProps {
-    searchParams?: {
-        page?: string
-        query?: string
-    }
+    searchParams: SearchParams
 }
 
 export default async function SummariesRoute({
     searchParams,
 }: SearchParamsProps) {
     const search = await searchParams
-    const query = search?.query ?? ""
-    const currentPage = Number(search?.page) || 1
+    const query = search.query ?? ""
+    const currentPage = Number(search.page) || 1
 
     const { data, meta } = await getSummaries(query, currentPage)
     const pageCount = meta?.pagination?.pageCount
@@ -59,6 +61,7 @@ export default async function SummariesRoute({
     console.log(meta)
 
     if (!data) return null
+
     return (
         <div className="grid grid-cols-1 gap-4 p-4">
             <Search />
