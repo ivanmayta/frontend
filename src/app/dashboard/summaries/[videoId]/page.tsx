@@ -7,10 +7,10 @@ type Params = Promise<{ videoId: string }>
 export default async function SummaryCardRoute(props: { params: Params }) {
     const { videoId } = await props?.params
 
-    //const data = await getSummaryById(videoId)
+    const data = await getSummaryById(videoId)
     return (
         <>
-            {/**<SummaryCardForm item={data.data} />**/}
+            <SummaryCardForm item={data.data} />
             <div>aqui estoy</div>
         </>
     )
