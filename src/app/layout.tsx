@@ -5,6 +5,7 @@ import { getGlobalData, getGlobalMetaData } from "@/services/strapi"
 import Header from "@/components/custom/header"
 import Footer from "@/components/custom/footer"
 import { Toaster } from "@/components/ui/sonner"
+import { ThemeProvider } from "@/components/ui/theme-provider"
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -39,12 +40,20 @@ export default async function RootLayout({
         <html lang="en">
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                suppressHydrationWarning
             >
-                <Toaster position="bottom-center" />
-                <Header data={header} />
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <Toaster position="bottom-center" />
+                    <Header data={header} />
 
-                {children}
-                <Footer data={footer} />
+                    {children}
+                    <Footer data={footer} />
+                </ThemeProvider>
             </body>
         </html>
     )

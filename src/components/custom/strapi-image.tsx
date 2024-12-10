@@ -20,7 +20,7 @@ export default function StrapiImage({
     if (!imageUrl) return null
 
     return (
-        <Image
+        <img
             src={imageUrl}
             alt={alt}
             height={height}

@@ -25,7 +25,7 @@ async function Header({ data }: { readonly data: HeaderProps }) {
     const user = await getUserMeLoader()
     //console.log(user)
     return (
-        <header className="flex items-center justify-between px-4 py-3 bg-white shadow-sm dark:bg-gray-800">
+        <header className="flex items-center justify-between px-4 py-3 bg-white shadow-sm dark:bg-background">
             <Logo text={logoText.text} />
             {user.ok && <SummaryForm />}
             <div className=" flex items-center gap-4">

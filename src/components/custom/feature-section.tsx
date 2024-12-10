@@ -39,7 +39,7 @@ function FeatureSection({ data }: { readonly data: FeatureSectionProps }) {
                             className="flex flex-col items-center text-center"
                             key={feature.id}
                         >
-                            <Icon className="w-12 h-12 mb-4 text-gray-900" />
+                            <Icon className="w-12 h-12 mb-4 " />
                             <h2 className="mb-4 text-2xl font-bold">
                                 {feature.heading}
                             </h2>

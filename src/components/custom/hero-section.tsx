@@ -29,12 +29,12 @@ async function HeroSection({ data }: { readonly data: HeroSectionProps }) {
     const isLogged = user?.ok
     const linkUrl = isLogged ? "/dashboard" : link.url
     return (
-        <header className="relative h-[600px] overflow-hidden">
+        <header className="relative h-[450px] overflow-hidden">
             <StrapiImage
-                src={image.url}
+                src="https://res.cloudinary.com/djpp5zuhc/image/upload/v1733800071/1678093753700_vogwah.jpg"
                 alt="Background"
-                height={1080}
                 width={1920}
+                height={1080}
                 className="absolute inset-0 object-cover w-full h-full aspect/16:9"
             />
             {/* 

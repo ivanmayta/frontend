@@ -10,7 +10,7 @@ export function Logo({ text = "Logo", dark = false }: Readonly<LogoProps>) {
             <MountainIcon className="h-6 w-6 text-pink-500" />
             <span
                 className={`text-lg font-semibold ${
-                    dark ? "text-white" : "text-slate-500"
+                    dark ? "text-white" : "text-foreground"
                 }`}
             >
                 {text}

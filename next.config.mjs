@@ -8,9 +8,11 @@ const nextConfig = {
                 port: "1337",
                 pathname: "/uploads/**/*",
             },
+
             {
                 protocol: "https",
-                hostname: "starfish-app-aw8cq.ondigitalocean.app",
+                hostname: "res.cloudinary.com",
+                pathname: "/djpp5zuhc/image/upload/**/*",
             },
         ],
     },
